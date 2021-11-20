@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int n , g = 0,u=0;
+	cin >> n;
+	int* arr = new int[n];
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	for (int i = 0; i < n; i++) {
+		
+		if (arr[i] == -1) {
+			if (g > 0) {
+				g -= 1;
+			}
+			else
+				u += 1;
+		}
+		else
+			g += arr[i];
+	}
+	cout << u;
+}
