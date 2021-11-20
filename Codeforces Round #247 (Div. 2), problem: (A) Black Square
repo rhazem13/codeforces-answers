@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int a, b, c, d;
+	cin >> a >> b >> c >> d;
+	string s;
+	cin >> s;
+	int xd=0;
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == '1')
+			xd += a;
+		else if (s[i] == '2')
+			xd += b;
+		else if (s[i] == '3')
+			xd += c;
+		else
+			xd += d;
+	}
+	cout << xd;
+}
