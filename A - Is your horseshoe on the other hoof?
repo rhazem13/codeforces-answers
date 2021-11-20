@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int arr[4];
+	int d7k = 0;
+	cin >> arr[0] >> arr[1] >> arr[2] >> arr[3];
+	for (int i = 0; i < 3; i++) {
+		for (int l = i+1; l < 4; l++) {
+			if (arr[i] == arr[l]) {
+				d7k += 1;
+				break;
+			}
+		}
+	}
+	cout << d7k;
+}
