@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int n, t, k, d;
+	cin >> n >> t >> k >> d;
+	
+	int left, right;
+	left = ((n / k) + ((n % k) != 0))*t;
+	right = 0;
+	int curr = 0;
+	int scndtimer = 0;
+	while (n > 0) {
+		curr += 1;
+		if (curr % t == 0 && curr !=0) {
+			n -= k;
+		}
+		if (scndtimer % t == 0 && scndtimer != 0) {
+			n -= k;
+		}
+		if (curr >= d) {
+			scndtimer += 1;
+		}
+	}
+//cout << curr  << "   " << left << endl;
+	if (curr  < left) {
+		cout << "YES";
+	}
+	else
+		cout << "NO";
+}
