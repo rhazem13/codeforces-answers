@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int n;
+	cin >> n;
+	int* home = new int[n];
+	int* away = new int[n];
+	for (int i = 0; i < n; i++) {
+		cin >> home[i] >> away[i];
+	}
+	int d7k = 0;
+	for (int i = 0; i < n; i++) {
+		for (int l = 0; l < n; l++) {
+			//|| (away[i] == home[l])
+			if ((home[i] == away[l]) )
+				d7k += 1;
+			
+		}
+ 
+	}
+	cout << d7k;
+}
