@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+//#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	//a 97 z 122
+	string s ;
+	cin >> s;
+	int* arr = new int[s.length()];
+	for (int i = 0; i < s.length(); i++) {
+		arr[i] = int(s[i]);
+	}
+	int n = 0,curr=97;
+	for (int i = 0; i < s.length(); i++) {
+		/*if(abs(arr[i]-curr)<(abs(arr[i]-97)+abs(curr-122))){
+		n += abs(arr[i] - curr);
+		}
+		else {
+			n += (abs(arr[i] - 97) + abs(curr - 122));
+		}*/
+		if (abs(arr[i] - curr) > 12) {
+			if (curr > 109) {
+				n += abs(curr - 123) + abs(97 - arr[i]);
+			}
+			else {
+				n += abs(curr - 97) + abs(123 - arr[i]);
+			}
+		}
+		else {
+			n += abs(arr[i] - curr);
+			
+		}
+ 
+		curr = arr[i];
+	}
+	cout << n;
+}
