@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	char d7k;
+	char arr[26];
+	for (int i = 0; i < 26; i++)
+		arr[i] = ' ';
+	bool isfound = false;
+	int arrcnter = 0;
+	int answer = 0;
+	while (true) {
+		
+		isfound = false;
+		cin >> d7k;
+		if (d7k == '}')
+			break;
+		if (d7k == ' ' || d7k == '{' || d7k == ',')
+			continue;
+		for (int i = 0; i < 26; i++) {
+			if (arr[i] == d7k)
+				isfound = true;
+		}
+		if (isfound)
+			continue;
+		else {
+			
+			if(arrcnter<26){
+				arr[arrcnter] = d7k;
+				arrcnter += 1;
+				answer += 1;
+			}
+		}
+	}
+	cout << answer;
+}
