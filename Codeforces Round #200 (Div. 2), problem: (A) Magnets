@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int n;
+	cin >> n;
+	int d7k = 1;
+	int x,tmp; 
+	cin >> x;
+	if (n == 1)
+		cout << 1;
+	else{
+	
+	tmp = x;
+	for (int i = 0; i < n-1; i++) {
+		cin >> x;
+		if (x != tmp)
+			d7k += 1;
+		tmp = x;
+	}
+	cout << d7k;
+}
+}
