@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	long long n, x;
+	cin >> n >> x;
+	char sign;
+	long long amount;
+	long long distress = 0;
+	for (int i = 0; i < n; i++) {
+		cin >> sign>>amount;
+		if (sign == '+') {
+			x += amount;
+		}
+		else {
+			if (x >= amount)
+				x -= amount;
+			else {
+				distress += 1;
+			}
+		}
+	}
+	cout << x << " " << distress;
+}
