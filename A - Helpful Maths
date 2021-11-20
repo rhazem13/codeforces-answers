@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	string s;
+	cin >> s;
+	int n = (s.length() + 1) / 2;
+ 
+	int* arr = new int[n];
+	int idx=0;
+	for (int i = 0; i < s.length(); i++) {
+		if (s[i] == '+')
+			continue;
+		arr[idx] = s[i]-'0';
+		idx++;
+	}
+	
+ 
+	int min;
+	
+	int tmp;
+	for (int i = 0; i < n-1; i++) {
+		min = i;
+		for (int l = i; l < n; l++) {
+			if (arr[l] < arr[min])
+				min = l;
+		}
+		{
+			tmp = arr[i];
+			arr[i] = arr[min];
+			arr[min] = tmp;
+			
+		}
+	}
+	
+	cout << arr[0];
+	for (int i = 1; i < n; i++) {
+		cout << "+" << arr[i];
+	}
+}
